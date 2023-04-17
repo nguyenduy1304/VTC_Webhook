@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "43935db6-00fd-4c6c-a761-b6ba94aa236c",
+		"name": "TelcoHub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23725216"
+	},
+	"item": [
+		{
+			"name": "API List Product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "PartnerId",
+						"value": "20210037",
+						"type": "text"
+					},
+					{
+						"key": "SecretKey",
+						"value": "7d2031abadb945bf913f3d9a9d829910",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://telcohub-demo.vtctelecom.com.vn/api/partner/getShippingData?partnerId=20210037&refId=578345&sign=fcbad0ca36ec7a3cdd8ca9b70ebe2e06",
+					"protocol": "https",
+					"host": [
+						"telcohub-demo",
+						"vtctelecom",
+						"com",
+						"vn"
+					],
+					"path": [
+						"api",
+						"partner",
+						"getShippingData"
+					],
+					"query": [
+						{
+							"key": "partnerId",
+							"value": "20210037"
+						},
+						{
+							"key": "refId",
+							"value": "578345"
+						},
+						{
+							"key": "sign",
+							"value": "fcbad0ca36ec7a3cdd8ca9b70ebe2e06"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Activate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://telcohub-demo.vtctelecom.com.vn/api/partner/activate/?address=Tỉnh Tiền Giang&fullname=Nguyễn Duy&partnerId=20210037&phone=84765063660&productCode=2022011202&refId=578345&sign=3995d423e3e4792409ecbb03c3c64009",
+					"protocol": "https",
+					"host": [
+						"telcohub-demo",
+						"vtctelecom",
+						"com",
+						"vn"
+					],
+					"path": [
+						"api",
+						"partner",
+						"activate",
+						""
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "Tỉnh Tiền Giang"
+						},
+						{
+							"key": "fullname",
+							"value": "Nguyễn Duy"
+						},
+						{
+							"key": "partnerId",
+							"value": "20210037"
+						},
+						{
+							"key": "phone",
+							"value": "84765063660"
+						},
+						{
+							"key": "productCode",
+							"value": "2022011202"
+						},
+						{
+							"key": "refId",
+							"value": "578345"
+						},
+						{
+							"key": "sign",
+							"value": "3995d423e3e4792409ecbb03c3c64009"
+						},
+						{
+							"key": "email",
+							"value": "oslthanhduy@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -7,114 +7,46 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    public class Hash
+    public static class Hash
     {
-        public Hash() { }
-
-        public enum HashType : int
+        public enum HashType
         {
             MD5,
             SHA1,
             SHA256,
+            SHA384,
             SHA512
         }
 
-        public static string GetHash(string text, HashType hashType)
+        public static string GetHash(string input, HashType hashType)
         {
-            string hashString;
+            var hashAlgorithm = GetHashAlgorithm(hashType);
+            byte[] data = hashAlgorithm.ComputeHash(Encoding.UTF8.GetBytes(input));
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (byte b in data)
+            {
+                stringBuilder.Append(b.ToString("x2"));
+            }
+            return stringBuilder.ToString();
+        }
+
+        private static HashAlgorithm GetHashAlgorithm(HashType hashType)
+        {
             switch (hashType)
             {
                 case HashType.MD5:
-                    hashString = GetMD5(text);
-                    break;
+                    return MD5.Create();
                 case HashType.SHA1:
-                    hashString = GetSHA1(text);
-                    break;
+                    return SHA1.Create();
                 case HashType.SHA256:
-                    hashString = GetSHA256(text);
-                    break;
+                    return SHA256.Create();
+                case HashType.SHA384:
+                    return SHA384.Create();
                 case HashType.SHA512:
-                    hashString = GetSHA512(text);
-                    break;
+                    return SHA512.Create();
                 default:
-                    hashString = "Invalid Hash Type";
-                    break;
+                    throw new ArgumentOutOfRangeException(nameof(hashType), hashType, "Unsupported hash type.");
             }
-            return hashString;
-        }
-
-        public static bool CheckHash(string original, string hashString, HashType hashType)
-        {
-            string originalHash = GetHash(original, hashType);
-            return (originalHash == hashString);
-        }
-
-        private static string GetMD5(string text)
-        {
-            UnicodeEncoding UE = new UnicodeEncoding();
-            byte[] hashValue;
-            byte[] message = UE.GetBytes(text);
-
-            MD5 hashString = new MD5CryptoServiceProvider();
-            string hex = "";
-
-            hashValue = hashString.ComputeHash(message);
-            foreach (byte x in hashValue)
-            {
-                hex += String.Format("{0:x2}", x);
-            }
-            return hex;
-        }
-
-        private static string GetSHA1(string text)
-        {
-            UnicodeEncoding UE = new UnicodeEncoding();
-            byte[] hashValue;
-            byte[] message = UE.GetBytes(text);
-
-            SHA1Managed hashString = new SHA1Managed();
-            string hex = "";
-
-            hashValue = hashString.ComputeHash(message);
-            foreach (byte x in hashValue)
-            {
-                hex += String.Format("{0:x2}", x);
-            }
-            return hex;
-        }
-
-        private static string GetSHA256(string text)
-        {
-            UnicodeEncoding UE = new UnicodeEncoding();
-            byte[] hashValue;
-            byte[] message = UE.GetBytes(text);
-
-            SHA256Managed hashString = new SHA256Managed();
-            string hex = "";
-
-            hashValue = hashString.ComputeHash(message);
-            foreach (byte x in hashValue)
-            {
-                hex += String.Format("{0:x2}", x);
-            }
-            return hex;
-        }
-
-        private static string GetSHA512(string text)
-        {
-            UnicodeEncoding UE = new UnicodeEncoding();
-            byte[] hashValue;
-            byte[] message = UE.GetBytes(text);
-
-            SHA512Managed hashString = new SHA512Managed();
-            string hex = "";
-
-            hashValue = hashString.ComputeHash(message);
-            foreach (byte x in hashValue)
-            {
-                hex += String.Format("{0:x2}", x);
-            }
-            return hex;
         }
     }
 }

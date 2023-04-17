@@ -4,3 +4,9 @@ D:\VTC\VTC_Webhook\Library\obj\Debug\Library.csproj.AssemblyReference.cache
 D:\VTC\VTC_Webhook\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 D:\VTC\VTC_Webhook\Library\obj\Debug\Library.dll
 D:\VTC\VTC_Webhook\Library\obj\Debug\Library.pdb
+D:\VTC_Webhook\Library\bin\Debug\Library.dll
+D:\VTC_Webhook\Library\bin\Debug\Library.pdb
+D:\VTC_Webhook\Library\obj\Debug\Library.csproj.AssemblyReference.cache
+D:\VTC_Webhook\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+D:\VTC_Webhook\Library\obj\Debug\Library.dll
+D:\VTC_Webhook\Library\obj\Debug\Library.pdb
