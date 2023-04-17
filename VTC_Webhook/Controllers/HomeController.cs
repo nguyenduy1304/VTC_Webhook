@@ -14,7 +14,7 @@ namespace VTC_Webhook.Controllers
 {
     public class HomeController : Controller
     {
-
+        private string base_uri ="https://telcohub-demo.vtctelecom.com.vn/api/";
         public JsonResult Getdata()
         {
             JsonResult jr = new JsonResult();
@@ -33,7 +33,7 @@ namespace VTC_Webhook.Controllers
             JsonResult jr = new JsonResult();
 
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://telcohub-demo.vtctelecom.com.vn/api/");
+            client.BaseAddress = new Uri(base_uri);
 
             var shippingdata = await client.GetAsync("");
             var conten_shippingdata = shippingdata.Content.ReadAsStringAsync();
@@ -54,11 +54,6 @@ namespace VTC_Webhook.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+        
     }
 }
