@@ -160,3 +160,13 @@ D:\VTC_Webhook\VTC_Webhook\obj\Debug\VTC_Webhook.csproj.CoreCompileInputs.cache
 D:\VTC_Webhook\VTC_Webhook\obj\Debug\VTC_Webhook.csproj.CopyComplete
 D:\VTC_Webhook\VTC_Webhook\obj\Debug\VTC_Webhook.dll
 D:\VTC_Webhook\VTC_Webhook\obj\Debug\VTC_Webhook.pdb
+D:\VTC_Webhook\VTC_Webhook\bin\EntityFramework.dll
+D:\VTC_Webhook\VTC_Webhook\bin\EntityFramework.SqlServer.dll
+D:\VTC_Webhook\VTC_Webhook\bin\Persistence.dll
+D:\VTC_Webhook\VTC_Webhook\bin\Persistence.pdb
+D:\VTC_Webhook\VTC_Webhook\bin\Persistence.dll.config
+D:\VTC_Webhook\VTC_Webhook\bin\EntityFramework.xml
+D:\VTC_Webhook\VTC_Webhook\bin\EntityFramework.SqlServer.xml
+D:\VTC_Webhook\VTC_Webhook\bin\Microsoft.Owin.dll
+D:\VTC_Webhook\VTC_Webhook\bin\Owin.dll
+D:\VTC_Webhook\VTC_Webhook\bin\Microsoft.Owin.xml
