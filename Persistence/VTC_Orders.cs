@@ -8,8 +8,18 @@ namespace Persistence
 
     public partial class VTC_Orders
     {
-        [StringLength(40)]
-        public string Id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public VTC_Orders()
+        {
+            VTC_Order_Detail = new HashSet<VTC_Order_Detail>();
+        }
+
+        [Key]
+        [StringLength(20)]
+        public string RefId { get; set; }
+
+        [StringLength(20)]
+        public string UserId { get; set; }
 
         [StringLength(100)]
         public string FullName { get; set; }
@@ -20,33 +30,15 @@ namespace Persistence
         [StringLength(15)]
         public string Phone { get; set; }
 
-        [StringLength(20)]
-        public string RefId { get; set; }
-
-        [StringLength(40)]
-        public string Abaha_Product_Code { get; set; }
-
-        [StringLength(30)]
-        public string Key_Value { get; set; }
-
         [Column(TypeName = "date")]
-        public DateTime? ActivationDate { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime? Expires { get; set; }
-
-        [Required]
-        [StringLength(20)]
-        public string RequestId_Activate { get; set; }
+        public DateTime? OrdersTime { get; set; }
 
         [StringLength(20)]
-        public string RequestId_ShippingData { get; set; }
-
-        [StringLength(40)]
-        public string Product_Code { get; set; }
+        public string Total { get; set; }
 
         public bool Status_sms { get; set; }
 
-        public virtual VTC_MapProducts VTC_MapProducts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VTC_Order_Detail> VTC_Order_Detail { get; set; }
     }
 }

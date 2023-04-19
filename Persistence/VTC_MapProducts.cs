@@ -11,7 +11,7 @@ namespace Persistence
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public VTC_MapProducts()
         {
-            VTC_Orders = new HashSet<VTC_Orders>();
+            VTC_Order_Detail = new HashSet<VTC_Order_Detail>();
         }
 
         [Key]
@@ -27,7 +27,10 @@ namespace Persistence
 
         public string ProductName { get; set; }
 
+        [StringLength(20)]
+        public string ShortName { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VTC_Orders> VTC_Orders { get; set; }
+        public virtual ICollection<VTC_Order_Detail> VTC_Order_Detail { get; set; }
     }
 }
