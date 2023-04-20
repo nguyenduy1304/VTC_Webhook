@@ -92,7 +92,7 @@ namespace VTC_Webhook.Controllers
                                     var shippingdata = await client.GetAsync("partner/getShippingData?partnerId=" + partnerId + "&refId=" + ref_order_request + "&sign=" + sign_shippingdata_hash);
                                     JObject jsonshippingdata = JObject.Parse(shippingdata.Content.ReadAsStringAsync().Result);
                                     VTC_Order_Detail vTC_Order_Detail = new VTC_Order_Detail();
-                                    vTC_Order_Detail.Id = Guid.NewGuid().ToString();
+                                     vTC_Order_Detail.Id = Guid.NewGuid().ToString();
                                     vTC_Order_Detail.RefId_Abaha = refId;
                                     vTC_Order_Detail.RefId_Telcohub = ref_order_request;
                                     vTC_Order_Detail.Key_Value = jsonshippingdata["data"][0]["detail"]["keyList"][0]["value"].ToString();
@@ -128,10 +128,9 @@ namespace VTC_Webhook.Controllers
             }
             JsonResult jr = new JsonResult();
             jr.Data = new
-            {
+            {         
                 status = 200,
                 Messager = "Success",
-                data = ""
             };
             return Json(jr, JsonRequestBehavior.AllowGet);
         }
